@@ -2,3 +2,64 @@ What is Recon :
   Recon is nothing but the process of gathering the information about the target company or an indiual. It consists of techniques that involves adversaries actively or passively gathering information on the target company,organization,personnel,staff
 Information could be details of target oraganization,employees,infrastructure.This information could be leveraged by an adversary in the later phases of an red-team operation to gain an initial access or foothold in the infrastructure of an target
 oraganization.
+
+
+
+# Passive Recon : 
+                When an advesary gathers the inforamtion about an oraganization or an individual from the publically abilable sources it is called as an Passive Recon. An adversary can utilize tools such as (whois,nslookup,DNS,google dorking techniques,
+                OSINT methods) on an oraganization or on the individual.He can also gather information from various social media platforms such as Facebook,Twitter,Instagram,Linkedin.
+
+                Other tools : theHarvester,sublist3r
+
+
+=============x===================x===============x================x==================x==========================x=========================x================x====================x=====================================x===============================x========
+
+# Active Recon :
+                When an adversary gaters information about an target oraganization with engaging with the target organization's network,hosts,employees (port scanning,vulnerability scanning, web application scanning) it is called as an active recon.
+
+  i) DNS Recon : 
+      a) Zonetransfer : Transferring the all dns information to the secondary dns server which is controlled by an adversary (Attacker) 
+        cmd : dig axfr logicmo.com
+
+  ii) Subdomain Enumeration : 
+      a) fierce : fierce -d logicmo.com
+      b) knockpy : knockpy locicmo.com
+
+
+
+2) PORT SCANS : 
+          nmap
+
+
+3) Vulnerability scans:
+                      nikto -h logicmo.com
+
+
+# Automated Recon Frameworks : 
+
+sn1per : 
+        sniper -t logicmo.com  -> # this will perform an active recon on the target 
+
+        sniper -t logicmo -m stealth -o -re -> # This will perform an passive Recon on the target 
+ 
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  amass : 
+            amass intel -whois -d logicmo.com -dir logicmo
+
+
+  amass enumeration : 
+                      amass enum -d logicmo.com
+
+  amass subdomain enumeratio :   amass enum -d logicmo.com -src -ip -brute -dir logicmo
+
+vizualization : 
+
+              amass viz -dir logicmo -d3
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+
+
+
